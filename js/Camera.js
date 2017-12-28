@@ -40,7 +40,7 @@ var Camera = function (aCanvas, aContext, x, y) {
         var delta = {
             x: (model.userTadpole.x - model.camera.x) / 30,
             y: (model.userTadpole.y - model.camera.y) / 30
-        }
+        };
 
         if (Math.abs(delta.x) + Math.abs(delta.y) > 0.1) {
             model.camera.x += delta.x;
@@ -80,7 +80,7 @@ var Camera = function (aCanvas, aContext, x, y) {
 
     this.startUILayer = function () {
         context.setTransform(1, 0, 0, 1, 0, 0);
-    }
+    };
 
     var debugBounds = function (bounds, text) {
         context.strokeStyle = '#fff';

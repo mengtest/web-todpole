@@ -198,10 +198,10 @@ var Tadpole = function () {
             context.fill();
         }
     };
-    
+
     var bulletsUpdate = function () {
         for (var i in tadpole.bullets) {
-            if (! tadpole.bullets[i].alive) {
+            if (!tadpole.bullets[i].alive) {
                 delete tadpole.bullets[i];
             } else {
                 tadpole.bullets[i].update();

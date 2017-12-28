@@ -8,7 +8,7 @@ var Message = function (msg) {
 
     this.update = function () {
         this.age++;
-    }
+    };
 
     this.draw =
         function (context, x, y, i) {
@@ -24,7 +24,7 @@ var Message = function (msg) {
             height: fontsize + paddingH * 2,
             x: x,
             y: (y - i * (fontsize + paddingH * 2 + 1)) - 20
-        }
+        };
 
         var fadeDuration = 20;
 
@@ -35,10 +35,10 @@ var Message = function (msg) {
         drawRoundedRectangle(context, messageBox.x, messageBox.y, messageBox.width, messageBox.height, 10);
         context.fillStyle = 'rgba(255,255,255,' + opacity + ')';
         context.fillText(message.message, messageBox.x + paddingW, messageBox.y + paddingH, 100);
-    }
+    };
 
     var drawRoundedRectangle = function (ctx, x, y, w, h, r) {
-        var r = r / 2;
+        r = r / 2;
         ctx.beginPath();
         ctx.moveTo(x, y + r);
         ctx.lineTo(x, y + h - r);
@@ -52,4 +52,4 @@ var Message = function (msg) {
         ctx.closePath();
         ctx.fill();
     }
-}
+};

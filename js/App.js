@@ -235,7 +235,7 @@ var App = function (aSettings, aCanvas) {
         canvas.height = window.innerHeight;
     };
 
-    var collideUpdate = function() {
+    var collideUpdate = function () {
         for (var i in model.tadpoles) {
             if (model.tadpoles[i].id == model.userTadpole.id) {
                 continue;

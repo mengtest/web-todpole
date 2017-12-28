@@ -15,7 +15,7 @@
             messagePointer = messageHistory.length;
             input.val('');
             chatText.text('')
-        }
+        };
 
         var updateDimensions = function () {
             chatText.text(input.val());
@@ -94,7 +94,7 @@
         });
 
         input.focus();
-    }
+    };
 
     $(function () {
         //$('#chat').initChat();

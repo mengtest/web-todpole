@@ -2,7 +2,7 @@
  * Created by zhangpei on 2016/7/7.
  */
 
-var Bullet = function(startX, startY, angle) {
+var Bullet = function (startX, startY, angle) {
 
     // console.log('New bullet');
 
@@ -21,11 +21,11 @@ var Bullet = function(startX, startY, angle) {
     bullet.curY = bullet.startY;
     bullet.time = 0;
 
-    bullet.update = function(model) {
-        if (! bullet.alive) {
+    bullet.update = function (model) {
+        if (!bullet.alive) {
             return;
         }
-        bullet.time ++;
+        bullet.time++;
         if (bullet.time == 100) {
             bullet.alive = false;
         }
@@ -33,8 +33,8 @@ var Bullet = function(startX, startY, angle) {
         bullet.curY = bullet.startY + Math.sin(bullet.angle) * bullet.speed * bullet.time;
     };
 
-    bullet.draw = function(context) {
-        if (! bullet.alive) {
+    bullet.draw = function (context) {
+        if (!bullet.alive) {
             return;
         }
         context.fillStyle = 'rgba(255, 255, 255, 0.8)';
@@ -44,10 +44,10 @@ var Bullet = function(startX, startY, angle) {
         context.fill();
     };
 
-    bullet.collideUpdate = function(model) {
+    bullet.collideUpdate = function (model) {
         for (var i in model.tadpoles) {
             if (model.tadpoles[i].id == model.userTadpole.id) {
-                continue ;
+                continue;
             }
             if (isCollide(model.userTadpole)) {
                 console.log('Crash');
@@ -56,7 +56,7 @@ var Bullet = function(startX, startY, angle) {
         }
     };
 
-    var isCollide = function(tadpole) {
+    var isCollide = function (tadpole) {
         return Math.sqrt((tadpole.x - bullet.curX) * (tadpole.x - bullet.curX) + (tadpole.y - bullet.curY) * (tadpole.y - bullet.curY)) <= 3;
     }
 };

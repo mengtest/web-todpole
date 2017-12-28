@@ -53,7 +53,7 @@ var Arrow = function (tadpole, camera) {
             context.beginPath();
             context.moveTo(point.x, point.y);
             context.lineTo(side1.x, side1.y);
-            context.lineTo(side2.x, side2.y)
+            context.lineTo(side2.x, side2.y);
             context.closePath();
             context.fill();
         }
@@ -65,4 +65,4 @@ var Arrow = function (tadpole, camera) {
             y: y + Math.sin(angle + Math.PI * angleMultiplier) * length
         }
     };
-}
+};
