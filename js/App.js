@@ -163,9 +163,9 @@ var App = function (aSettings, aCanvas) {
             e.preventDefault();
         }
         else if (e.keyCode == keys.ctrl) {
-            var x = model.userTadpole.x.toFixed(1);
-            var y = model.userTadpole.y.toFixed(1);
-            var angle = model.userTadpole.angle.toFixed(3);
+            var x = model.userTadpole.x;
+            var y = model.userTadpole.y;
+            var angle = model.userTadpole.angle;
             model.userTadpole.shoot(x, y, angle);
             if (webSocketService.hasConnection) {
                 webSocketService.sendShoot(x, y, angle);
