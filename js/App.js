@@ -98,7 +98,7 @@ var App = function (aSettings, aCanvas) {
 
     app.onSocketMessage = function (e) {
         try {
-            var data = JSON.parse(e.data.trim());
+            var data = JSON.parse(e.data);
             webSocketService.processMessage(data);
         } catch (e) {
             console.log(e);
@@ -167,8 +167,9 @@ var App = function (aSettings, aCanvas) {
             var y = model.userTadpole.y.toFixed(1);
             var angle = model.userTadpole.angle.toFixed(3);
             model.userTadpole.shoot(x, y, angle);
-            webSocketService.sendShoot(x, y, angle);
-            // webSocketService.sendShootProto(app.proto, x, y, angle);
+            if (webSocketService.hasConnection) {
+                webSocketService.sendShoot(x, y, angle);
+            }
             e.preventDefault();
         }
     };
