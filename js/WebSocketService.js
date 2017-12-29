@@ -107,10 +107,10 @@ var WebSocketService = function (model, webSocket) {
     this.sendUpdate = function (tadpole) {
         var sendObj = {
             type: 'update',
-            x: tadpole.x.toFixed(1),
-            y: tadpole.y.toFixed(1),
-            angle: tadpole.angle.toFixed(3),
-            momentum: tadpole.momentum.toFixed(3)
+            x: parseFloat(tadpole.x.toFixed(1)),
+            y: parseFloat(tadpole.y.toFixed(1)),
+            angle: parseFloat(tadpole.angle.toFixed(3)),
+            momentum: parseFloat(tadpole.momentum.toFixed(3))
         };
 
         if (tadpole.name) {
@@ -123,9 +123,9 @@ var WebSocketService = function (model, webSocket) {
     this.sendShoot = function (x, y, angle) {
         var sendObj = {
             type: 'shoot',
-            x: x,
-            y: y,
-            angle: angle
+            x: parseFloat(x.toFixed(1)),
+            y: parseFloat(y.toFixed(1)),
+            angle: parseFloat(angle.toFixed(3))
         };
 
         webSocket.send(JSON.stringify(sendObj));
@@ -143,10 +143,10 @@ var WebSocketService = function (model, webSocket) {
             type: 'message',
             message: msg,
 
-            x: tadpole.x.toFixed(1),
-            y: tadpole.y.toFixed(1),
-            angle: tadpole.angle.toFixed(3),
-            momentum: tadpole.momentum.toFixed(3)
+            x: parseFloat(tadpole.x.toFixed(1)),
+            y: parseFloat(tadpole.y.toFixed(1)),
+            angle: parseFloat(tadpole.angle.toFixed(3)),
+            momentum: parseFloat(tadpole.momentum.toFixed(3))
         };
 
         if (tadpole.name) {
