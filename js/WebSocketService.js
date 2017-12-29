@@ -86,9 +86,9 @@ var WebSocketService = function (model, webSocket) {
             return;
         }
         tadpole.timeSinceLastServerUpdate = 0;
-        var x = data.x.toFixed(1);
-        var y = data.y.toFixed(1);
-        var angle = data.angle.toFixed(3);
+        var x = data.x;
+        var y = data.y;
+        var angle = data.angle;
         tadpole.shoot(x, y, angle);
     };
 
